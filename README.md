@@ -1,6 +1,6 @@
 # Bài toán tính tiền điện thoại
 
-## Overview
+## Tổng quan
 
 Bài toán xây dựng chương trình tính tiền một người dùng (user) phải trả. Cách tính tiền cước như sau:
 
@@ -43,5 +43,4 @@ Có thể nhập body cho API này nhưng để phù hợp bài toán em đã đ
 - Cài đặt các thưu viện trong file requirement.txt.
 
 - Chạy file main.py, trong cmd gõ lệnh "uvicorn main:app --reload" để thực hiện chương trình.
-  
 - Để test API có thể sử dụng phần mềm postman với API put sẽ truyền thời gian gọi mỗi cuộc điện thoại và tên người dùng theo đường dẫn, API get sẽ tính toán ra tổng số block mà người dùng đã thực hiện được.
