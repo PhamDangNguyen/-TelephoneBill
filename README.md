@@ -44,3 +44,6 @@ Có thể nhập body cho API này nhưng để phù hợp bài toán em đã đ
 
 - Chạy file main.py, trong cmd gõ lệnh "uvicorn main:app --reload" để thực hiện chương trình.
 - Để test API có thể sử dụng phần mềm postman với API put sẽ truyền thời gian gọi mỗi cuộc điện thoại và tên người dùng theo đường dẫn, API get sẽ tính toán ra tổng số block mà người dùng đã thực hiện được.
+
+## Demo video
+https://github.com/PhamDangNguyen/TelephoneBill/assets/86046279/f579047d-66eb-40de-8dbf-1ddfc4b3b618
