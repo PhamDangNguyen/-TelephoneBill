@@ -1,0 +1,49 @@
+---
+title: Call billing
+tags: 
+projects: 
+---
+# Tính tiền điền thoại
+## Yêu cầu
+Bạn được yêu cầu xây dựng chương trình tính tiền một người dùng (user) phải trả. Cách tính tiền cước như sau:
+* Mỗi cuộc gọi được chia thành các block 30s. Số giây lẻ được tính thành 1 block. Ví dụ: cuộc gọi 6s được tính là 1 block. Cuộc gọi 36s được tính là 2 block
+* Số tiền cước mà người dùng phải trả là tổng số block họ đã gọi. Để đơn giản, chương trình không cần chia theo tháng, năm, mà chỉ cần đưa ra số tổng.
+### API ghi nhận cuộc gọi
+API này sẽ được gọi sau khi caller kết thúc cuộc gọi. Thông tin bao gồm:
+* `username`: một chuỗi ngắn hơn 32 ký tự, đặc trưng cho từng users. `username` được truyền tại path của request
+* `call_duration`: một số nguyên mô tả thời gian cuộc gọi tính bằng millisecond. `call_duration` truyền tại body của request
+Ví dụ:
+```shell
+PUT /mobile/{user_name}/call
+{
+    "call_duration": 3000
+}
+```
+### API hóa đơn (billing)
+API	 body của response:
+* `call_count`: tổng số cuộc gọi user đã có
+* `block_count`: tổng số block của user
+Ví dụ
+```shell
+GET /mobile/{user_name}/billing
+{
+    "call_count": 3000,
+  "block_count": 10000,
+}
+```
+## Sản phẩm
+Sản phẩm cuối của bạn bao gồm:
+- Sourcecode: Được tổ chức, tuân thủ convention, được upload lên 1 repo github cá nhân.
+- `Dockerfile`: Sử dụng để tạo docker image
+- Hướng dẫn sử dụng: Hướng dẫn sử dụng để người đánh giá có thể chạy thử chương trình của bạn
+## Đánh giá sản phẩm
+Chương trình của bạn được đánh giá trên các tiêu chí sau:
+- Khả năng phân tích bài toán
+- Khả năng sử dụng ngôn ngữ lập trình, framework
+- Mức độ hoàn thiện sản phẩm (tổ chức code, unittest, input validation)
+- Khả năng làm việc với database
+- Khả năng làm các công việc hằng ngày của backend (sử dụng docker, commandline)
+- Khả năng thể hiện bản thân
+## Chú thích khác
+- Bạn nên dùng 1 trong các ngôn ngữ sau: **Python**, Go, Javascript (nodejs)
+- Bạn nên sử dụng 1 database dạng server (postgres, mysql, mongo)
